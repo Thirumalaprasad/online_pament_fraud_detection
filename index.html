@@ -1,0 +1,368 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Online Payment </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">  
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'farmer/lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'farmer/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'farmer/css/bootstrap.min.css' %}" rel="stylesheet">
+    
+    <!-- Template Stylesheet -->
+    <link href="{% static 'farmer/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+        
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0"><img src="{% static 'farmer/img/8403664.png' %}" class="mx-3" alt="Environment Logo">Online Payment</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+                        <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                        <a href="{% url 'userLogin' %}" class="nav-item nav-link">User</a>
+                        <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <a href="{% url 'userRegister' %}" class="btn btn-secondary py-2 px-4 ms-3">Register</a>
+                </div>
+            </nav>
+            
+            <div class="container-xxl py-5 bg-primary hero-header mb-5">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5">
+                        <div class="col-lg-7 text-center text-lg-start">
+                            <img class="img-fluid animated zoomIn" src="https://img.freepik.com/free-vector/student-using-laptop-library_74855-2539.jpg?ga=GA1.1.1380342102.1742186647&semt=ais_keywords_boost" alt="Online Payment Prediction Hero Image">
+                        </div>
+                        <div class="col-lg-5 text-center text-lg-start">
+                            <h1 class="display-4 text-white mb-4 animated slideInLeft">Online Payment Prediction using Machine Learning</h1>
+                            <p class="text-white animated slideInLeft">Leverage machine learning algorithms to predict Online Payment trends, optimize resources, and improve productivity in real-time.</p>
+                            
+                            <h1 class="text-white mb-4 animated slideInLeft">
+                                
+                            </h1>
+                            <a href="#" class="btn btn-secondary py-sm-3 px-sm-5 me-3 animated slideInLeft">Get Started Today</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Full Screen Search Start -->
+            <div class="modal fade" id="searchModal" tabindex="-1">
+                <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content" style="background: rgba(29, 40, 51, 0.8);">
+                        <div class="modal-header border-0">
+                            <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body d-flex align-items-center justify-content-center">
+                            <div class="input-group" style="max-width: 600px;">
+                                <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
+                                <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Full Screen Search End -->
+            
+            
+            <!-- About Start -->
+            <div class="container-xxl">
+                <div class="container px-lg-5">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-5">
+                            <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="https://img.freepik.com/free-vector/illustration-multitasking-person_23-2148405071.jpg?ga=GA1.1.1380342102.1742186647&semt=ais_keywords_boost" alt="Online Payment Prediction Image">
+                        </div>
+                        <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="section-title position-relative mb-4 pb-4">
+                                <h1 class="mb-2">Explore Online Payment Prediction using Machine Learning</h1>
+                            </div>
+                            <p class="mb-4">Predict future Online Payment demands using machine learning to allocate resources more effectively, reduce downtime, and improve efficiency in various industries.</p>
+                            <div class="row g-3">
+                                <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
+                                    <div class="bg-light rounded text-center p-4">
+                                        <i class="fa fa-chart-line fa-2x text-primary mb-2"></i>
+                                        <h2 class="mb-1" data-toggle="counter-up">95%</h2>
+                                        <p class="mb-0">Accurate Online Payment predictions to ensure optimal resource allocation and task completion.</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+                                    <div class="bg-light rounded text-center p-4">
+                                        <i class="fa fa-cogs fa-2x text-primary mb-2"></i>
+                                        <h2 class="mb-1" data-toggle="counter-up">150</h2>
+                                        <p class="mb-0">Increase productivity by forecasting peak times and adjusting schedules accordingly.</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
+                                    <div class="bg-light rounded text-center p-4">
+                                        <i class="fa fa-brain fa-2x text-primary mb-2"></i>
+                                        <h2 class="mb-1" data-toggle="counter-up">50+</h2>
+                                        <p class="mb-0">Apply advanced machine learning algorithms to predict demand fluctuations and adapt in real-time.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- About End -->
+            
+<!-- Online Payment Prediction Start -->
+<div class="container-xxl py-5">
+    <div class="container px-lg-5">
+        <div class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="mb-3">Explore Online Payment Prediction using Machine Learning</h1>
+            <p class="mb-1">Leverage AI and machine learning algorithms to predict Online Payment trends, optimize resource allocation, and boost productivity in real-time.</p>
+        </div>
+        <div class="row gy-5 gx-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="position-relative shadow rounded border-top border-5 border-primary">
+                    <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-50 translate-middle bg-primary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
+                        <i class="fa fa-chart-line text-white"></i>
+                    </div>
+                    <div class="text-center border-bottom p-4 pt-5">
+                        <h4 class="fw-bold">Online Payment Forecasting</h4>
+                        <p class="mb-0">Predict future Online Payment demands using machine learning models to optimize scheduling and resource allocation.</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Accurate Online Payment forecasts for better decision-making.</p>
+                        <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Efficient resource management based on demand predictions.</p>
+                        <p class="mb-0"><i class="fa fa-check text-primary me-3"></i>Minimize downtime and improve productivity with AI-powered predictions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="position-relative shadow rounded border-top border-5 border-secondary">
+                    <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-50 translate-middle bg-secondary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
+                        <i class="fa fa-cogs text-white"></i>
+                    </div>
+                    <div class="text-center border-bottom p-4 pt-5">
+                        <h4 class="fw-bold">Resource Optimization</h4>
+                        <p class="mb-0">Use AI-driven insights to optimize resource usage and reduce unnecessary costs during project execution.</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Optimize resource allocation with predictive analytics.</p>
+                        <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Efficiently schedule tasks to avoid overloading resources.</p>
+                        <p class="mb-0"><i class="fa fa-check text-primary me-3"></i>Improve cost management with AI-based predictions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="position-relative shadow rounded border-top border-5 border-primary">
+                    <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-50 translate-middle bg-primary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
+                        <i class="fa fa-clock text-white"></i>
+                    </div>
+                    <div class="text-center border-bottom p-4 pt-5">
+                        <h4 class="fw-bold">Time Management</h4>
+                        <p class="mb-0">Use AI to predict project timelines, track progress, and prevent delays by adjusting work plans proactively.</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Accurate predictions for timely project delivery.</p>
+                        <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Minimize delays by tracking real-time Online Payment changes.</p>
+                        <p class="mb-0"><i class="fa fa-check text-primary me-3"></i>Better project timeline management with predictive analytics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- Online Payment Prediction End -->
+
+
+    <!-- Online Payment Prediction Comparison Start -->
+<div class="container-xxl pt-5">
+    <div class="container px-lg-5">
+        <div class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="mb-3">Expert Insights in Online Payment Prediction using Machine Learning</h1>
+            <p class="mb-1">Leverage advanced machine learning techniques to predict future Online Payment, optimize resources, and streamline operations effectively.</p>
+        </div>
+        <div class="row g-5 comparison position-relative">
+            <div class="col-lg-6 pe-lg-5">
+                <div class="section-title position-relative mx-auto mb-4 pb-4">
+                    <h3 class="fw-bold mb-0">Advanced Online Payment Management Solutions</h3>
+                </div>
+                <div class="row gy-3 gx-5">
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                        <i class="fa fa-calendar-alt fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold">Online Payment Forecasting</h5>
+                        <p>Accurately predict Online Payment trends to optimize scheduling and resource allocation across projects.</p>
+                    </div>
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+                        <i class="fa fa-tasks fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold">Real-Time Resource Allocation</h5>
+                        <p>Automatically allocate resources based on predicted Online Payment to avoid overuse and ensure efficiency.</p>
+                    </div>
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                        <i class="fa fa-balance-scale fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold">Risk Management</h5>
+                        <p>Identify potential resource bottlenecks and operational risks before they impact the project timeline.</p>
+                    </div>
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                        <i class="fa fa-cogs fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold">Automated Adjustments</h5>
+                        <p>Use AI to adjust schedules and resource distribution in real-time based on Online Payment predictions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 ps-lg-5">
+                <div class="section-title position-relative mx-auto mb-4 pb-4">
+                    <h3 class="fw-bold mb-0">AI-Powered Online Payment Prediction Systems</h3>
+                </div>
+                <div class="row gy-3 gx-5">
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                        <i class="fa fa-robot fa-3x text-secondary mb-3"></i>
+                        <h5 class="fw-bold">Instant Online Payment Prediction</h5>
+                        <p>AI-driven prediction models instantly forecast Online Payment demands and allocate resources efficiently.</p>
+                    </div>
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+                        <i class="fa fa-chart-line fa-3x text-secondary mb-3"></i>
+                        <h5 class="fw-bold">Predictive Resource Optimization</h5>
+                        <p>Use machine learning to optimize resource usage based on predicted Online Payment fluctuations.</p>
+                    </div>
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                        <i class="fa fa-bell fa-3x text-secondary mb-3"></i>
+                        <h5 class="fw-bold">Real-Time Alerts</h5>
+                        <p>Receive notifications for Online Payment spikes, underutilization, or potential resource shortages.</p>
+                    </div>
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                        <i class="fa fa-file-alt fa-3x text-secondary mb-3"></i>
+                        <h5 class="fw-bold">Comprehensive Forecasting Reports</h5>
+                        <p>Access detailed reports on predicted Online Payments, resource utilization, and project timelines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Online Payment Prediction Comparison End -->
+
+
+        
+        
+        
+        <!-- User Information Start -->
+        
+        <!-- User Information End -->
+        
+        
+        
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-white footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row gy-5 gx-4 pt-5">
+                    <div class="col-12">
+                        <h2 class="fw-bold text-white mb-4">Online Payment</h2>
+                        
+                    </div>
+                    <div class="col-lg-5 col-md-12">
+                        <div class="row gy-5 g-4">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-white mb-4">Shortcuts</h5>
+                                <a class="btn btn-link" href="{% url 'index' %}">Home</a>
+                                <a class="btn btn-link" href="{% url 'about' %}">About Us</a>
+                                <a class="btn btn-link" href="{% url 'contact' %}">Contact Us</a>
+                             
+                                
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-white mb-4">Useful Links</h5>
+                                <a class="btn btn-link" href="{% url 'userRegister' %}">userRegister</a>
+                                <a class="btn btn-link" href="{% url 'userLogin' %}">user Login</a>
+                                <a class="btn btn-link" href="{% url 'userRegister' %}">user Register</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="fw-bold text-white mb-4">Get In Touch</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> Lb NagarHyderabad, Telangana 500074</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i> 99*********99</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@student.in</p>
+                        
+                    </div>
+                    <div class="col-md-6 col-lg-4 mt-lg-n5">
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Online Payment</a>, All Right Reserved. 
+                            
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            Designed By <a class="border-bottom" href="https://student.in" target="_blank">student</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'farmer/lib/wow/wow.min.js' %}"></script>
+    
+    <script src="{% static 'farmer/lib/easing/easing.min.js' %}"></script>
+    
+    <script src="{% static 'farmer/lib/waypoints/waypoints.min.js' %}"></script>
+    
+    <script src="{% static 'farmer/lib/counterup/counterup.min.js' %}"></script>
+    
+    <script src="{% static 'farmer/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    
+    
+    <!-- Template Javascript -->
+    <script src="{% static 'farmer/js/main.js' %}"></script>
+    
+</body>
+
+</html>
